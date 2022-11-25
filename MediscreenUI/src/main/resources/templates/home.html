@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Mediscreen</title>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/css.css}" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light navi">
+  <a class="navbar-brand navTitre" href="/">Mediscreen</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/patients">Patients</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+	<br><br>
+	<div class="mainBox">
+	
+	<h1 class="titre">Welcome to Mediscreen !</h1>
+	
+	Click on the navigation bar to check your patients.
+	
+	<br><br>	
+	<a href="/patients/add" class="btn btn-primary btn-sm bouton">Add a new Patient</a><br>
+	</div>
+</div>
+</body>
+</html>

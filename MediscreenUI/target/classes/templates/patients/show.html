@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Mediscreen</title>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/css.css}" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light navi">
+  <a class="navbar-brand navTitre" href="/">Mediscreen</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/patients">Patients</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+	<br><br>
+	<div class="mainBox" style="text-align:center;width:70%">
+	
+	<h1 class="titre" th:text="${name}"></h1><br><br>
+	<div class="mainBox" style="border: 2px solid #5dc4bd;width:60%;margin-left: auto;">
+	<div class="infoLabel">Assessment from notes</div><br>
+	<p th:text="${assessment}"></p></div>
+	<div class="mainBox" style="border: 2px dotted #5dc4bd;width:60%;margin-left: auto;">
+	<h2 class="titre">Basic Information</h2>
+	<div class="infoLabel">Family Name : </div><p th:text="${patient.familyName}"></p>
+	<div class="infoLabel">First Name : </div><p th:text="${patient.firstName}"></p>
+	<div class="infoLabel">Birthdate : </div><p th:text="${patient.birthdate}"></p>
+	<div class="infoLabel">Gender : </div><p th:text="${patient.gender}"></p>
+	<div class="infoLabel">Address : </div><p th:text="${patient.address}"></p>
+	<div class="infoLabel">Phone Number : </div><p th:text="${patient.phone}"></p>
+	</div>
+	
+	
+	
+	<br><h1 class="titre">Notes</h1>
+		 <div th:if="${param.noteDeleted}">
+     <div class="alert alert-info" style="width:40%;margin-left: auto;margin-right: auto;">Note deleted successfully</div>
+    </div>
+    	 <div th:if="${param.noteAdded}">
+     <div class="alert alert-info" style="width:40%;margin-left: auto;margin-right: auto;">Note added successfully</div>
+    </div>
+
+	<a th:href="@{/notes/add/{id}(id=${patient.patientId})}" class="btn btn-primary btn-sm bouton">Create note</a><br>
+	<br>
+	<div th:each="note : ${notes}" class="noteBox">
+	<h2 class="titre" th:text="${note.date}">Date</h2>
+	<div class="infoLabel" style="width:20%">Note : </div><br>
+	<p  th:text="${note.content}"></p>
+	<br><a th:href="@{/notes/delete/{id}/{id2} (id=${note.id}, id2=${patient.patientId})}" class="btn btn-primary btn-sm bouton">Delete</a><br>
+	</div>
+	
+	</div>
+</div>
+</body>
+</html>

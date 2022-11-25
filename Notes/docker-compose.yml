@@ -1,0 +1,35 @@
+version: '3.8'
+
+volumes:
+  notesdb:
+
+networks:
+  mongo:
+    external: true
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/notes
+    ports:
+      - "27017"
+    volumes:
+      - notesdb:/data/db
+    networks:
+      - mongo
+
+  notes-api:
+    build: .
+    container_name: notes
+    depends_on:
+      - mongodb
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/notes
+      MONGODB_HOST: mongodb
+    ports:
+      - "8082:8082"
+    networks:
+      - mongo

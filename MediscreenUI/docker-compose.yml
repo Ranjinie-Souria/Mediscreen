@@ -1,0 +1,25 @@
+version: '3.8'
+
+volumes:
+  patientdb:
+  notesdb:
+
+networks:
+  mysql:
+    external: true
+  mongo:
+    external: true
+
+services:
+  mediscreen-ui:
+    build: .
+    container_name: mediscreen-ui
+    environment:
+      HOST_MYSQL: patient
+      HOST_MONGODB: notes
+      HOST_ASSESS: host.docker.internal
+    ports:
+      - "9001:9001"
+    networks:
+      - mysql
+      - mongo

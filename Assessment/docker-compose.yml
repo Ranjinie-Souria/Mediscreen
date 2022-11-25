@@ -1,0 +1,24 @@
+version: '3.8'
+
+volumes:
+  patientdb:
+  notesdb:
+
+networks:
+  mysql:
+    external: true
+  mongo:
+    external: true
+
+services:
+  assessment-api:
+    build: .
+    container_name: assessment
+    environment:
+      HOST_MYSQL: patient
+      HOST_MONGODB: notes
+    ports:
+      - "8083:8083"
+    networks:
+      - mysql
+      - mongo

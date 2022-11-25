@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Mediscreen</title>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/css.css}" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light navi">
+  <a class="navbar-brand navTitre" href="/">Mediscreen</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home </a>
+      <a class="nav-item nav-link" href="/patients">Patients<span class="sr-only">(current)</span></a>
+    </div>
+  </div>
+</nav>
+<div class="container"><br><br>
+<div class="mainBox">
+	<div class="titre"><h2>Patients</h2></div>
+	 <div th:if="${param.success}">
+     <div class="alert alert-info">Patient updated successfully</div>
+    </div>
+    	 <div th:if="${param.delete}">
+     <div class="alert alert-info">Patient deleted successfully</div>
+    </div>
+    <br>
+		<a href="/patients/add" class="btn btn-primary btn-sm bouton">Add New</a><br><br>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Infos</th>
+					<th>Family Name</th>
+					<th>First Name</th>
+					<th>Birth Date</th>
+					<th>Gender</th>
+					<th>Address</th>
+					<th>Phone</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr th:each="patient : ${patients}">
+					<td style="width: 10%" class="text-center">
+						<a th:href="@{/patients/{id}(id=${patient.patientId})}">Info <div th:text="${patient.patientId}"></div></a>
+					</td>
+					<td th:text="${patient.familyName}"></td>
+					<td th:text="${patient.firstName}"></td>
+					<td th:text="${patient.birthdate}"></td>
+					<td th:text="${patient.gender}"></td>
+					<td th:text="${patient.address}"></td>
+					<td th:text="${patient.phone}"></td>
+					<td style="width: 15%" class="text-center">
+						<a th:href="@{/patients/update/{id}(id=${patient.patientId})}">Edit</a>&nbsp;|&nbsp;
+						<a th:href="@{/patients/delete/{id}(id=${patient.patientId})}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div><br><br>
+</body>
+</html>

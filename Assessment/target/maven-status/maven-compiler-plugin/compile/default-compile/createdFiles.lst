@@ -1,0 +1,14 @@
+com\mediscreen\proxy\PatientProxy.class
+com\mediscreen\model\Patient.class
+com\mediscreen\CustomProperties.class
+com\mediscreen\services\PatientService.class
+META-INF\spring-configuration-metadata.json
+com\mediscreen\proxy\NoteProxy$1.class
+com\mediscreen\model\Note.class
+com\mediscreen\services\AssessmentService.class
+com\mediscreen\model\Assessment.class
+com\mediscreen\proxy\NoteProxy.class
+com\mediscreen\AssessmentApplication.class
+com\mediscreen\services\NoteService.class
+com\mediscreen\controllers\AssessmentController.class
+com\mediscreen\proxy\PatientProxy$1.class

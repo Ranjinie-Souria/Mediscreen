@@ -1,0 +1,7 @@
+com\mediscreen\service\PatientService.class
+com\mediscreen\repository\IPatientRepository.class
+com\mediscreen\controller\PatientController.class
+com\mediscreen\model\Patient.class
+com\mediscreen\exceptions\PatientNotFoundException.class
+com\mediscreen\configuration\SwaggerConfig.class
+com\mediscreen\PatientsApplication.class

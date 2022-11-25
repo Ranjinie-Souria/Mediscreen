@@ -1,0 +1,43 @@
+version: '3.8'
+
+volumes:
+  patientdb:
+
+networks:
+  mysql:
+    external: true
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: patients
+    ports:
+      - "3308:3306"
+    volumes:
+      - patientdb:/data/db
+    networks:
+      - mysql
+
+  patient-api:
+    build: .
+    container_name: patient
+    depends_on:
+          - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql/patients?serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_DATASOURCE_DATABASE: patients
+      SPRING_DATABASE_PORT: 3308
+      MYSQL_HOST: localhost
+      MYSQL_PORT: 3306
+    ports:
+      - "8084:8084"
+    expose:
+      - "8084"
+    networks:
+      - mysql

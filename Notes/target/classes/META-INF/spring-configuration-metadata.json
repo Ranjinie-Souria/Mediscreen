@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "com.mediscreen",
+      "type": "com.mediscreen.CustomProperties",
+      "sourceType": "com.mediscreen.CustomProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.mediscreen.api-patient",
+      "type": "java.lang.String",
+      "sourceType": "com.mediscreen.CustomProperties"
+    }
+  ],
+  "hints": []
+}

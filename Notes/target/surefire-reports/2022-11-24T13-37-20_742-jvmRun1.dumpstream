@@ -1,0 +1,37 @@
+# Created at 2022-11-24T13:38:03.517
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:398)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+
+# Created at 2022-11-24T13:38:24.900
+Unexpected IOException: 7,1,com.mediscreen.services.NoteServiceTest,createNote_should_saveNote,null,Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN\002C servers=[{address=mongodb:27017\002C type=UNKNOWN\002C state=CONNECTING\002C exception={com.mongodb.MongoSocketException: mongodb}\002C caused by {java.net.UnknownHostException: mongodb}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN\002C servers=[{address=mongodb:27017\002C type=UNKNOWN\002C state=CONNECTING\002C exception={com.mongodb.MongoSocketException: mongodb}\002C caused by {java.net.UnknownHostException: mongodb}}],null,Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN\002C servers=[{address=mongodb:27017\002C type=UNKNOWN\002C state=CONNECTING\002C exception={com.mongodb.MongoSocketException: mongodb}\002C caused by {java.net.UnknownHostException: mongodb}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN\002C servers=[{address=mongodb:27017\002C type=UNKNOWN\002C state=CONNECTING\002C exception={com.mongodb.MongoSocketException: mongodb}\002C caused by {java.net.UnknownHostException: mongodb}}],NoteServiceTest.createNote_should_saveNote:42 \00BB DataAccessResourceFailure Time...,org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN\002C servers=[{address=mongodb:27017\002C type=UNKNOWN\002C state=CONNECTING\002C exception={com.mongodb.MongoSocketException: mongodb}\002C caused by {java.net.UnknownHostException: mongodb}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN\002C servers=[{address=mongodb:27017\002C type=UNKNOWN\002C state=CONNECTING\002C exception={com.mongodb.MongoSocketException: mongodb}\002C caused by {java.net.UnknownHostException: mongodb}}]\000A\0009at com.mediscreen.services.NoteServiceTest.createNote_should_saveNote(NoteServiceTest.java:42)\000ACaused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN\002C servers=[{address=mongodb:27017\002C type=UNKNOWN\002C state=CONNECTING\002C exception={com.mongodb.MongoSocketException: mongodb}\002C caused by {java.net.UnknownHostException: mongodb}}]\000A\0009at com.mediscreen.services.NoteServiceTest.createNote_should_saveNote(NoteServiceTest.java:42)\000A
+
+
+# Created at 2022-11-24T13:38:24.901
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.mediscreen.services.NoteServiceTest,null,null,null
+
+
+# Created at 2022-11-24T13:38:36.820
+Unexpected IOException with stream: 2022-11-24 13:38:36.819  INFO 904 --- [}-mongodb:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server mongodb:27017
+
+com.mongodb.MongoSocketException: mongodb
+	at com.mongodb.ServerAddress.getSocketAddresses(ServerAddress.java:217) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:75) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+Caused by: java.net.UnknownHostException: mongodb
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:952) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1658) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1524) ~[na:na]
+	at com.mongodb.ServerAddress.getSocketAddresses(ServerAddress.java:209) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 6 common frames omitted
+
+
+

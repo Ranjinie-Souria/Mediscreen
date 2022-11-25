@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "com.mediscreen.apiPatient",
+  "type": "java.lang.String",
+  "description": "Api Patients"
+}]}

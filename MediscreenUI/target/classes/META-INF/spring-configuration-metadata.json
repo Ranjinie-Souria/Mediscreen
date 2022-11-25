@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "com.mediscreen",
+      "type": "com.mediscreen.CustomProperties",
+      "sourceType": "com.mediscreen.CustomProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.mediscreen.api-assessment",
+      "type": "java.lang.String",
+      "sourceType": "com.mediscreen.CustomProperties"
+    },
+    {
+      "name": "com.mediscreen.api-note",
+      "type": "java.lang.String",
+      "sourceType": "com.mediscreen.CustomProperties"
+    },
+    {
+      "name": "com.mediscreen.api-patient",
+      "type": "java.lang.String",
+      "sourceType": "com.mediscreen.CustomProperties"
+    },
+    {
+      "name": "com.mediscreen.apiPatient",
+      "type": "java.lang.String",
+      "description": "Api Patients"
+    }
+  ],
+  "hints": []
+}
