@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Assessment/Assessment.iml" filepath="$PROJECT_DIR$/Assessment/Assessment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Mediscreen.iml" filepath="$PROJECT_DIR$/.idea/Mediscreen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MediscreenUI/MediscreenUI.iml" filepath="$PROJECT_DIR$/MediscreenUI/MediscreenUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Notes/Notes.iml" filepath="$PROJECT_DIR$/Notes/Notes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Patients/Patients.iml" filepath="$PROJECT_DIR$/Patients/Patients.iml" />
+    </modules>
+  </component>
+</project>
